@@ -3,7 +3,7 @@ import PhotoWall from "../components/photos";
 
 
 
-class Portraits extends React.Component {
+class Home extends React.Component {
 
     render() {
 
@@ -12,14 +12,13 @@ class Portraits extends React.Component {
 
         return (
 
-            <div className="Portraits" >
-                port
-                <PhotoWall />
+            <div className="Home" >
+home
             </div>
         );
     }
 
 }
 
-export default Portraits;
+export default Home;
 
