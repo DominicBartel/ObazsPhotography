@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
                         <Nav.Link href="#contact">Appointments</Nav.Link>
                         <NavDropdown title="Portfolio" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#portfolio/portraits">Portraits</NavDropdown.Item>
-                            <NavDropdown.Item href="#portfolio/wedding">Wedding</NavDropdown.Item>
+                            {/* <NavDropdown.Item href="#portfolio/wedding">Wedding</NavDropdown.Item> */}
                             <NavDropdown.Item href="#portfolio/landscape">Landscape</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#portfolio/favorites">Favorites</NavDropdown.Item>

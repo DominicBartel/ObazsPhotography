@@ -16,14 +16,17 @@ class PhotoWall extends React.Component {
 
     render() {
 
-        this.routeLocation = this.props.location.pathname;
-        // console.log(this.props.location.pathname)
-        const PhotoGallery = determinePhotos;
+        var path = this.props.location.pathname;
+
+        const PhotoGallery = (
+            function () {
+                return determinePhotos(path)
+            });
         return (
 
             <div className="photoWall" >
                 <PhotoGallery />
-                
+
             </div>
         );
     }
@@ -32,16 +35,36 @@ class PhotoWall extends React.Component {
 export default withRouter(PhotoWall)
 
 function determinePhotos(routeLocation) {
-    var photoGallery = <Gallery photos={[
-        {
-            src: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/70698611_2318907091539182_7184607153716461568_o.jpg?_nc_cat=104&_nc_ohc=Zy_RsY95tVUAQn25McWQzXGpixQOVytSkYKDBH5NLvr4J2Rnln5PIv_hA&_nc_ht=scontent-sea1-1.xx&oh=8b82938fce244bbfd0d35d24f8349506&oe=5E885159",
-            width: 1821,
-            height: 1216
-        }, {
-            src: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/69842881_2318907284872496_4594719265520615424_o.jpg?_nc_cat=102&_nc_ohc=aDqsWfBqHM0AQkOy22Ho1cr4pFWHM0zxugLUMvojnqbITuxGhzfMUfCoQ&_nc_ht=scontent-sea1-1.xx&oh=ed14c98283039cdae329af6ed0a9d254&oe=5E7FCB20",
-            width: 2048,
-            height: 1367
+
+    var smallRoute = routeLocation.replace('/portfolio/', "")
+    var API = 'http://localhost:3001/imgData/' + smallRoute
+    var route = 'http://localhost:3001/images/' + smallRoute
+
+    var gatheredPhotos = [];
+
+    const request = async () => {
+        const response = await fetch(API)
+        const json = await response.json();
+
+        console.log(json)
+
+        for (var i = 0; i < json.length; i++) {
+            gatheredPhotos.push(
+                {
+                    src: route + "/" + json[i],
+                    width: 1,
+                    height: 1
+                }
+            );
         }
-    ]} />;
-    return photoGallery;
+
+
+    };
+    request()
+
+
+    var photo = <Gallery photos={gatheredPhotos} />;
+    return photo;
+    // return Promise.all(getImages);
+
 }
