@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Gallery from "react-photo-gallery";
-import {photos} from "./photos";
+import {photos} from "./components/photos";
 import './App.css';
 
 const BasicRows = () => <Gallery photos={photos}/>;
