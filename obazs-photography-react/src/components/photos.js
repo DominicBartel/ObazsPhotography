@@ -3,14 +3,6 @@ import React from 'react';
 import Gallery from "react-photo-gallery";
 import { withRouter } from 'react-router-dom';
 
-const BasicRows = () => <Gallery photos={[
-    {
-        src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-        width: 4,
-        height: 3
-    }
-]} />;
-
 
 class PhotoWall extends React.Component {
 
@@ -37,8 +29,8 @@ export default withRouter(PhotoWall)
 function determinePhotos(routeLocation) {
 
     var smallRoute = routeLocation.replace('/portfolio/', "")
-    var API = 'http://localhost:3001/imgData/' + smallRoute
-    var route = 'http://localhost:3001/images/' + smallRoute
+    var API = '/imgData/' + smallRoute
+    var route = '/images/' + smallRoute
 
     var gatheredPhotos = [];
 
