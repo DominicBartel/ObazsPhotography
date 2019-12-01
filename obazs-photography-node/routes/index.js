@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.use(express.static(__dirname.replace('obazs-photography-node\\routes', "obazs-photography-react\\build")));
+router.use(express.static(__dirname.replace('obazs-photography-node\/routes', "obazs-photography-react\/build")));
 
 const fs = require("fs");
 
@@ -9,7 +9,7 @@ const fs = require("fs");
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  let build = __dirname.replace('obazs-photography-node\\routes', "obazs-photography-react\\build\\index.html");
+  let build = __dirname.replace('obazs-photography-node\/routes', "obazs-photography-react\/build\/index.html");
   res.sendFile(build);
 });
 // '../../obazs-photography-react/build/static/index.html'
