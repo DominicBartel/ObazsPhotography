@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoWall from "../components/photos";
+import PhotoWall from "../components/gallery";
 
 
 

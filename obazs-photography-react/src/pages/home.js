@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid,Row, Col } from 'react-flexbox-grid';
 import Image from "react-bootstrap/Image"
 
+// let imgDir = "http://localhost:3000/images/portraits/";
 let imgDir = "/images/portraits/";
 
 class Home extends React.Component {
