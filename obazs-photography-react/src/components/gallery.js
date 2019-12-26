@@ -4,6 +4,7 @@ import Gallery from "react-photo-gallery";
 import { withRouter } from 'react-router-dom';
 
 
+
 class PhotoWall extends React.Component {
 
     constructor(props) {
@@ -43,12 +44,12 @@ class PhotoWall extends React.Component {
             var imgs = [];
             for (var i = 0; i < json.length; i++) {
 
-
+                
                 imgs.push(
                     {
                         src: route + "/" + json[i].fileName,
-                        width: 1,
-                        height: 1
+                        width: json[i].fileX,
+                        height: json[i].fileY
                     }
                 );
             }
