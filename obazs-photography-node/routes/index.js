@@ -25,7 +25,16 @@ router.get('/imgData/:folder', (req, res) =>{
   let directory = "./public/images/" + req.params.folder;
   let dirBuff = Buffer.from(directory);
 
-  let files = fs.readdirSync(directory);
+  let fileName = fs.readdirSync(directory);
+  let files = []
+  for(var i = 0; i < fileName.length; i++){
+
+    files.push({
+      fileName: fileName[i],
+      fileX: 0, 
+      fileY: 0
+    })
+  }
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.send(files);
 });

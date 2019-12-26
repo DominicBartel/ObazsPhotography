@@ -13,7 +13,6 @@ class Portraits extends React.Component {
         return (
 
             <div className="Portraits" >
-                port
                 <PhotoWall />
             </div>
         );

@@ -46,7 +46,7 @@ class PhotoWall extends React.Component {
 
                 imgs.push(
                     {
-                        src: route + "/" + json[i],
+                        src: route + "/" + json[i].fileName,
                         width: 1,
                         height: 1
                     }

@@ -13,7 +13,6 @@ class Landscape extends React.Component {
         return (
 
             <div className="Landscape" >
-                land
                 <PhotoWall />
             </div>
         );

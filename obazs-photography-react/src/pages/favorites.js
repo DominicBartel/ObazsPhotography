@@ -13,7 +13,6 @@ class Favorites extends React.Component {
         return (
 
             <div className="Favorites" >
-                fav
                 <PhotoWall />
             </div>
         );

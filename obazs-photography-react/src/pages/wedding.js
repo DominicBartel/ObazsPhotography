@@ -13,7 +13,6 @@ class Wedding extends React.Component {
         return (
 
             <div className="Wedding" >
-                wedd
                 <PhotoWall />
             </div>
         );
