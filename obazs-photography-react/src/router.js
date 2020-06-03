@@ -2,7 +2,8 @@ import React from 'react';
 import {
   HashRouter,
   Route,
-  Switch
+  Switch,
+  BrowserRouter
 } from 'react-router-dom';
 
 import NavBar from "./components/navBar";
@@ -21,7 +22,7 @@ class Router extends React.Component {
   render() {
     
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div>
           <NavBar />
 
@@ -57,7 +58,7 @@ class Router extends React.Component {
         </div>
 
 
-      </HashRouter>)
+      </BrowserRouter>)
   }
 }
 
